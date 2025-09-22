@@ -142,19 +142,19 @@ const SearchBooks = () => {
         {/* Books Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredBooks.map((book) => (
-            <Card key={book.id} className="hover:shadow-lg transition-all duration-300">
+            <Card key={book.id} className="book-card hover:shadow-2xl hover:shadow-library-blue/10 transition-all duration-500 group overflow-hidden">
               <CardHeader>
                 <div className="flex justify-between items-start mb-2">
-                  <Badge variant={book.available ? "default" : "secondary"} className="mb-2">
+                  <Badge variant={book.available ? "default" : "secondary"} className="mb-2 transition-all duration-300 group-hover:scale-105">
                     {book.available ? (
                       <><CheckCircle className="h-3 w-3 mr-1" /> Available</>
                     ) : (
                       <><XCircle className="h-3 w-3 mr-1" /> Borrowed</>
                     )}
                   </Badge>
-                  <Badge variant="outline">{book.category}</Badge>
+                  <Badge variant="outline" className="transition-all duration-300 group-hover:bg-library-amber/10">{book.category}</Badge>
                 </div>
-                <CardTitle className="text-lg line-clamp-2">{book.title}</CardTitle>
+                <CardTitle className="text-lg line-clamp-2 font-playfair group-hover:text-library-blue transition-colors duration-300">{book.title}</CardTitle>
                 <p className="text-muted-foreground flex items-center gap-1">
                   <User className="h-4 w-4" />
                   {book.author}
@@ -178,7 +178,7 @@ const SearchBooks = () => {
                       <Button 
                         variant="hero" 
                         size="sm" 
-                        className="w-full"
+                        className="w-full group-hover:scale-105 transition-transform duration-300"
                         onClick={() => handleBorrowBook(book)}
                       >
                         Borrow Book

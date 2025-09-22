@@ -9,16 +9,18 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90",
-        destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
-        outline: "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
-        secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
-        ghost: "hover:bg-accent hover:text-accent-foreground",
-        link: "text-primary underline-offset-4 hover:underline",
-        hero: "bg-gradient-to-r from-library-blue to-library-blue-light text-white hover:shadow-lg transition-all duration-300 font-semibold",
-        amber: "bg-library-amber text-foreground hover:bg-library-amber/90 font-medium",
-        success: "bg-library-success text-white hover:bg-library-success/90",
-        warning: "bg-library-warning text-foreground hover:bg-library-warning/90",
+        default: "bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300",
+        destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90 transition-all duration-300",
+        outline: "border border-input bg-background hover:bg-accent hover:text-accent-foreground transition-all duration-300 hover:shadow-md",
+        secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80 transition-all duration-300",
+        ghost: "hover:bg-accent hover:text-accent-foreground transition-all duration-300",
+        link: "text-primary underline-offset-4 hover:underline transition-all duration-300",
+        hero: "shine-effect bg-gradient-to-r from-library-blue to-library-blue-light text-white hover:shadow-xl hover:shadow-library-blue/25 transition-all duration-500 font-semibold transform hover:scale-105",
+        amber: "bg-library-amber text-foreground hover:bg-library-amber/90 font-medium transition-all duration-300 hover:shadow-lg hover:shadow-library-amber/25",
+        success: "bg-library-success text-white hover:bg-library-success/90 transition-all duration-300 hover:shadow-lg hover:shadow-library-success/25",
+        warning: "bg-library-warning text-foreground hover:bg-library-warning/90 transition-all duration-300",
+        glass: "glass hover:bg-white/90 text-library-blue border-library-blue/20 hover:shadow-xl transition-all duration-500",
+        premium: "bg-gradient-to-r from-library-amber via-library-blue to-library-amber-light text-white font-semibold hover:shadow-2xl hover:scale-105 transition-all duration-500 animate-shimmer",
       },
       size: {
         default: "h-10 px-4 py-2",

@@ -38,54 +38,54 @@ const Dashboard = () => {
 
       <main className="container mx-auto px-4 py-8">
         {/* Welcome Section */}
-        <div className="mb-8">
-          <h2 className="text-3xl font-bold mb-2">
+        <div className="mb-8 animate-fade-in">
+          <h2 className="text-4xl font-bold font-playfair gradient-text mb-4 animate-float">
             Welcome back, {user?.fullName}!
           </h2>
-          <p className="text-muted-foreground">
+          <p className="text-lg text-muted-foreground">
             Ready to explore your digital library today?
           </p>
         </div>
 
         {/* Quick Stats */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-          <Card>
+          <Card className="group hover:shadow-xl transition-all duration-500 overflow-hidden">
             <CardContent className="p-6">
               <div className="flex items-center gap-4">
-                <div className="p-3 bg-library-blue/10 rounded-lg">
-                  <Library className="h-6 w-6 text-library-blue" />
+                <div className="p-3 bg-library-blue/10 rounded-lg group-hover:bg-library-blue/20 transition-colors duration-300">
+                  <Library className="h-6 w-6 text-library-blue group-hover:scale-110 transition-transform duration-300" />
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">Books Available</p>
-                  <p className="text-2xl font-bold">2,540+</p>
+                  <p className="text-2xl font-bold font-playfair">2,540+</p>
                 </div>
               </div>
             </CardContent>
           </Card>
 
-          <Card>
+          <Card className="group hover:shadow-xl transition-all duration-500 overflow-hidden">
             <CardContent className="p-6">
               <div className="flex items-center gap-4">
-                <div className="p-3 bg-library-amber/10 rounded-lg">
-                  <BookOpen className="h-6 w-6 text-library-amber" />
+                <div className="p-3 bg-library-amber/10 rounded-lg group-hover:bg-library-amber/20 transition-colors duration-300">
+                  <BookOpen className="h-6 w-6 text-library-amber group-hover:scale-110 transition-transform duration-300" />
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">Currently Borrowed</p>
-                  <p className="text-2xl font-bold">{borrowedBooks.length}</p>
+                  <p className="text-2xl font-bold font-playfair">{borrowedBooks.length}</p>
                 </div>
               </div>
             </CardContent>
           </Card>
 
-          <Card>
+          <Card className="group hover:shadow-xl transition-all duration-500 overflow-hidden">
             <CardContent className="p-6">
               <div className="flex items-center gap-4">
-                <div className="p-3 bg-library-success/10 rounded-lg">
-                  <Clock className="h-6 w-6 text-library-success" />
+                <div className="p-3 bg-library-success/10 rounded-lg group-hover:bg-library-success/20 transition-colors duration-300">
+                  <Clock className="h-6 w-6 text-library-success group-hover:scale-110 transition-transform duration-300" />
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">Reading Hours</p>
-                  <p className="text-2xl font-bold">24+</p>
+                  <p className="text-2xl font-bold font-playfair">24+</p>
                 </div>
               </div>
             </CardContent>
@@ -95,12 +95,12 @@ const Dashboard = () => {
         {/* Navigation Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
           <Link to="/search">
-            <Card className="hover:shadow-lg transition-all duration-300 cursor-pointer group">
+            <Card className="book-card hover:shadow-2xl hover:shadow-library-blue/20 transition-all duration-500 cursor-pointer group glass">
               <CardHeader className="text-center">
-                <div className="mx-auto p-4 bg-library-blue/10 rounded-full group-hover:bg-library-blue/20 transition-colors">
-                  <Search className="h-8 w-8 text-library-blue" />
+                <div className="mx-auto p-4 bg-library-blue/10 rounded-full group-hover:bg-library-blue/20 transition-colors duration-300 animate-pulse-glow">
+                  <Search className="h-8 w-8 text-library-blue group-hover:scale-125 transition-transform duration-300" />
                 </div>
-                <CardTitle className="text-lg">Search Books</CardTitle>
+                <CardTitle className="text-lg font-playfair">Search Books</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground text-center">
@@ -111,12 +111,12 @@ const Dashboard = () => {
           </Link>
 
           <Link to="/borrowed">
-            <Card className="hover:shadow-lg transition-all duration-300 cursor-pointer group">
+            <Card className="book-card hover:shadow-2xl hover:shadow-library-amber/20 transition-all duration-500 cursor-pointer group glass">
               <CardHeader className="text-center">
-                <div className="mx-auto p-4 bg-library-amber/10 rounded-full group-hover:bg-library-amber/20 transition-colors">
-                  <Library className="h-8 w-8 text-library-amber" />
+                <div className="mx-auto p-4 bg-library-amber/10 rounded-full group-hover:bg-library-amber/20 transition-colors duration-300">
+                  <Library className="h-8 w-8 text-library-amber group-hover:scale-125 transition-transform duration-300" />
                 </div>
-                <CardTitle className="text-lg">Borrowed Books</CardTitle>
+                <CardTitle className="text-lg font-playfair">Borrowed Books</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground text-center">
@@ -127,12 +127,12 @@ const Dashboard = () => {
           </Link>
 
           <Link to="/reports">
-            <Card className="hover:shadow-lg transition-all duration-300 cursor-pointer group">
+            <Card className="book-card hover:shadow-2xl hover:shadow-library-success/20 transition-all duration-500 cursor-pointer group glass">
               <CardHeader className="text-center">
-                <div className="mx-auto p-4 bg-library-success/10 rounded-full group-hover:bg-library-success/20 transition-colors">
-                  <BarChart3 className="h-8 w-8 text-library-success" />
+                <div className="mx-auto p-4 bg-library-success/10 rounded-full group-hover:bg-library-success/20 transition-colors duration-300">
+                  <BarChart3 className="h-8 w-8 text-library-success group-hover:scale-125 transition-transform duration-300" />
                 </div>
-                <CardTitle className="text-lg">Reports</CardTitle>
+                <CardTitle className="text-lg font-playfair">Reports</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground text-center">
@@ -142,12 +142,12 @@ const Dashboard = () => {
             </Card>
           </Link>
 
-          <Card className="hover:shadow-lg transition-all duration-300 cursor-pointer group bg-gradient-to-br from-library-blue/5 to-library-amber/5">
+          <Card className="book-card hover:shadow-2xl transition-all duration-500 cursor-pointer group bg-gradient-to-br from-library-blue/5 to-library-amber/5 glass">
             <CardHeader className="text-center">
-              <div className="mx-auto p-4 bg-library-blue/10 rounded-full group-hover:bg-library-blue/20 transition-colors">
-                <BookOpen className="h-8 w-8 text-library-blue" />
+              <div className="mx-auto p-4 bg-library-blue/10 rounded-full group-hover:bg-library-blue/20 transition-colors duration-300">
+                <BookOpen className="h-8 w-8 text-library-blue group-hover:scale-125 transition-transform duration-300" />
               </div>
-              <CardTitle className="text-lg">Quick Access</CardTitle>
+              <CardTitle className="text-lg font-playfair">Quick Access</CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-sm text-muted-foreground text-center">
